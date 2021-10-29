@@ -40,10 +40,12 @@ jobs:
     name: E2E Tests
     runs-on: ubuntu-20.04
     timeout-minutes: 20
+    needs: [ test, codegen, lint ]
     env:
       KUBECONFIG: /home/runner/.kubeconfig
     strategy:
       fail-fast: false
+      max-parallel: 2
       matrix:
         include:
           - test: test-api
