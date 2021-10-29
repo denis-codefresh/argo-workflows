@@ -145,7 +145,7 @@ jobs:
     name: Codegen
     runs-on: ubuntu-20.04
     needs: [ tests ]
-    timeout-minutes: 15
+    timeout-minutes: 20
     env:
       GOPATH: /home/runner/go
       PROTOC_ZIP: protoc-3.11.1-linux-x86_64.zip
